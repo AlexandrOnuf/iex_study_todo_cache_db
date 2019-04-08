@@ -13,12 +13,12 @@ defmodule Todo.DatabaseWorker do
     GenServer.call(worker_pid, {:get, key})
   end
 
-  @impl GenEvent
+  @impl GenServer
   def init(db_folder) do
     {:ok, db_folder}
   end
 
-  @impl GenEvent
+  @impl GenServer
   def handle_cast({:store, key, data}, db_folder) do
     db_folder
     |> file_name(key)
