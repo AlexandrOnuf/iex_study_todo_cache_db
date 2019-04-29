@@ -12,7 +12,7 @@ defmodule Todo.Cache do
 
   @impl GenServer
   def init(_) do
-    {:ok, Map.new()}
+    {:ok, %{}}
   end
 
   @impl GenServer
